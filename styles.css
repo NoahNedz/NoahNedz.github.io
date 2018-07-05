@@ -4,7 +4,11 @@ body {
     height: 100%;
     font-family: 'Ubuntu', seriff;
 }
-
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: white;
+    }
+}
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
