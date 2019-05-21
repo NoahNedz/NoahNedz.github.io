@@ -89,6 +89,9 @@ a:visited {
     overflow-x: hidden;
     padding-top: 20px;
   }
+  .sidenav #mobileMenuLink {
+    display: none !important;
+  }
   .sidenav a {
     padding: 6px 6px 6px 32px;
     text-decoration: none;
