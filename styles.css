@@ -120,8 +120,8 @@ a:visited {
 }
 
 /* On smaller screens, where height is less than 800px, change the style of the sidenav (less padding and a smaller font size) */
-@media (max-height: 800px) and (max-width: 1024px) {
-  .sidenav {display: none;}
+@media screen and (max-height: 800px) and (max-width: 1024px) {
+  .sidenav {display: none;visibility: hidden;clear: both;}
 }
 
  
