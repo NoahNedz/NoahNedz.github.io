@@ -119,10 +119,9 @@ a:visited {
   margin-left: 25px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+/* On smaller screens, where height is less than 800px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 800px) {
   .sidenav {display: none;}
-  .sidenav a {font-size: 18px;}
 }
 
  
