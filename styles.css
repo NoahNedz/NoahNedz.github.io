@@ -2,7 +2,7 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Courier New', Courier, monospace;
-    color: black;
+    color: rgb(54, 51, 51);
 }
 body:before {
     content: "";
@@ -45,18 +45,18 @@ body:before {
 }
 
 .row{
-    color: black;
+    color: rgb(56, 54, 54);
 }
 
 
 
 a {
-    color: black; 
+    color: rgb(56, 54, 54); 
 }
 
 li a:hover{
     background-color: #0099FF;
-    color:black;
+    color:rgb(56, 54, 54);
     -moz-transition: background-color 0.01s;
     -webkit-transition: background-color 0.01s;
     -o-transition: background-color 0.01s;
@@ -71,11 +71,11 @@ li a{
   transition: background-color .3s ease-in;
 }
 a:link {
-    color:black;
+    color:rgb(56, 54, 54);
     text-decoration: underline;
 }
 a:visited {
-    color:black;
+    color:rgb(56, 54, 54);
     text-decoration: underline;
 }
 .sidenav {
