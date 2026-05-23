@@ -1,131 +1,198 @@
+:root {
+  --bg: #0b1020;
+  --ink: #dce4ff;
+  --muted: #8fa1c7;
+  --panel: #121a31;
+  --border: #263454;
+  --accent: #48d6b2;
+  --ring: #f1c75f;
+  --shadow: 0 10px 24px rgba(2, 7, 18, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(54, 51, 51);
-    
-}
-body:before {
-    content: "";
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    background: white;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    font-size: 35px;
-    
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(72, 214, 178, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(72, 214, 178, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 85% 18%, rgba(241, 199, 95, 0.14), transparent 32%),
+    linear-gradient(180deg, #0d1327 0%, var(--bg) 100%);
+  background-size: 24px 24px, 24px 24px, auto, auto;
 }
 
-.navbar .navbar-collapse {
-    text-align: center;
+.page {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.75rem;
 }
 
-.navbar .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #330867; /*Sets the text hover color on navbar*/
+.hero {
+  padding: 0.15rem 0 0.75rem;
+  animation: float-in 300ms ease-out both;
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
-        a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #330867; /*BACKGROUND color for active*/
-    background-color: #030033;
+.eyebrow {
+  margin: 0;
+  font-size: clamp(0.9rem, 2.4vw, 1.2rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
-.navbar .navbar-nav > li > a{
-    color: white;
+h1 {
+  margin: 0.4rem 0 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 9.2vw, 4.8rem);
+  line-height: 1.05;
+  max-width: 18ch;
 }
 
-.row{
-    color: rgb(56, 54, 54);
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 0.55rem;
+  flex: 1;
+  min-height: 0;
 }
 
-
-
-a {
-    color: rgb(56, 54, 54); 
+.link-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.24rem;
+  padding: 0.8rem 0.85rem;
+  text-decoration: none;
+  color: var(--ink);
+  background: linear-gradient(180deg, rgba(21, 31, 59, 0.95) 0%, rgba(15, 24, 48, 0.95) 100%);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transform: translateY(8px);
+  opacity: 0;
+  animation: rise 280ms ease-out forwards;
+  justify-content: center;
 }
 
-li a:hover{
-    background-color: #0099FF;
-    color:rgb(56, 54, 54);
-    -moz-transition: background-color 0.01s;
-    -webkit-transition: background-color 0.01s;
-    -o-transition: background-color 0.01s;
-    transition: background-color 0.01s;
-
+.link-card:nth-child(1) {
+  animation-delay: 90ms;
 }
 
-li a{
-  -moz-transition: background-color .3s ease-in;
-  -webkit-transition: background-color .3s ease-in;
-  -o-transition: background-color .3s ease-in;
-  transition: background-color .3s ease-in;
-}
-a:link {
-    color:rgb(56, 54, 54);
-    text-decoration: underline;
-}
-a:visited {
-    color:rgb(56, 54, 54);
-    text-decoration: underline;
-}
-.sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
+.link-card:nth-child(2) {
+  animation-delay: 150ms;
 }
 
-/* Page content */
-
-  
-  .sidenav a {
-    padding: 6px 6px 6px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: rgb(172, 169, 169);
-  }
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
+.link-card:nth-child(3) {
+  animation-delay: 210ms;
 }
 
-.sidenav .closebtn {
+.link-card:nth-child(4) {
+  animation-delay: 270ms;
+}
+
+.link-card::after {
+  content: "";
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 25px;
+  inset: 0;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 120ms ease;
+  pointer-events: none;
 }
 
-/* On smaller screens, where height is less than 800px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-width: 1600px) {
-  .sidenav {display: none;visibility: hidden;clear: both;}
+.link-title {
+  font-family: "Courier New", monospace;
+  font-size: clamp(1.25rem, 5.2vw, 2rem);
+  line-height: 1.2;
+  color: var(--accent);
 }
 
- 
-  .featurette-divider {
-    margin: 40px 0; /* <hr> between each */
-    border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(12, 11, 11), rgba(0, 0, 0, 0));
-    }
+.link-meta {
+  font-size: clamp(1rem, 3.2vw, 1.3rem);
+  color: var(--muted);
+}
+
+.link-card:hover,
+.link-card:focus-visible {
+  background: linear-gradient(180deg, rgba(25, 38, 71, 0.98) 0%, rgba(17, 29, 56, 0.98) 100%);
+  border-color: rgba(72, 214, 178, 0.45);
+  transform: translateY(-1px);
+}
+
+.link-card:focus-visible {
+  outline: none;
+}
+
+.link-card:hover::after,
+.link-card:focus-visible::after {
+  border-color: var(--ring);
+}
+
+.footer {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  font-family: "Courier New", monospace;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 0.45rem;
+  }
+
+  .hero,
+  .footer {
+    display: none;
+  }
+
+  .links {
+    min-height: calc(100dvh - 0.9rem);
+    gap: 0.45rem;
+  }
+
+  .link-card {
+    border-radius: 6px;
+    padding: 1rem 0.95rem;
+  }
+
+  .link-title {
+    font-size: clamp(1.7rem, 7.2vw, 2.6rem);
+    line-height: 1.1;
+  }
+
+  .link-meta {
+    font-size: clamp(1.15rem, 4.2vw, 1.55rem);
+  }
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
